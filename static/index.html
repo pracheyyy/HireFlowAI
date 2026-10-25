@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HireFlow AI — Placement Journey</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/static/style.css?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/static/style.css?v=4">
 </head>
 <body>
 <div class="app-shell">
@@ -24,7 +24,7 @@
   </div>
 </aside>
 <main class="main-area" id="home">
-  <header class="topbar"><div><div class="eyebrow">YOUR PLACEMENT JOURNEY</div><h1 id="greeting">Hi, Student <span class="wave">✦</span></h1><p class="subheading">Small steps today. More opportunities tomorrow.</p></div><div class="top-actions"><span class="status-pill"><i></i> <span id="apiStatus">Workspace ready</span></span><button class="avatar avatar-top" id="profileShortcut">S</button></div></header>
+  <header class="topbar"><div><div class="eyebrow">YOUR PLACEMENT JOURNEY</div><h1 id="greeting">Hi, Student <span class="wave">✦</span></h1><p class="subheading">Small steps today. More opportunities tomorrow.</p></div><div class="top-actions"><span class="status-pill"><i></i> <span id="apiStatus">Workspace ready</span></span><button class="secondary-btn logout-btn" id="logoutBtn" type="button">Sign out</button><button class="avatar avatar-top" id="profileShortcut">S</button></div></header>
   <section class="hero"><div class="hero-copy"><span class="hero-kicker">YOUR NEXT CHAPTER STARTS HERE</span><h2>Build skills.<br>Find your flow.</h2><p>One calm space for your placement preparation.</p><button class="dark-button" data-open="planner">Make my plan <span>↗</span></button></div><div class="hero-art" aria-hidden="true"><div class="art-sun"></div><div class="art-book"><div class="book-line"></div><div class="book-line short"></div><div class="book-line"></div><div class="book-line short"></div></div><div class="art-person"><div class="hair"></div><div class="face"><div class="eye left"></div><div class="eye right"></div><div class="glasses"></div><div class="smile"></div></div><div class="neck"></div><div class="shirt"></div><div class="arm"></div></div><span class="sparkle s1">✦</span><span class="sparkle s2">✳</span></div><div class="hero-note"><span>✦</span><div><b>Keep showing up</b><small>Progress beats perfection.</small></div></div></section>
   <section class="section-heading"><div><h2>Your preparation, at a glance</h2><p>Choose a block to update your progress.</p></div><button class="subtle-button" data-open="progress">View all progress <span>→</span></button></section>
   <section class="progress-grid" id="homeProgress"></section>
@@ -36,5 +36,5 @@
 <div class="toast" id="toast" role="status"></div>
 <div class="modal-backdrop" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><span class="eyebrow" id="modalEyebrow">H I R E F L O W</span><h2 id="modalTitle">Workspace</h2></div><button class="close-btn" id="closeModal" aria-label="Close">×</button></div><div class="modal-content" id="modalContent"></div></section></div>
 <div class="chat-drawer" id="chatDrawer"><div class="chat-head"><div class="chat-avatar">✧</div><div><b>HireFlow AI</b><small>Placement prep, without the overwhelm</small></div><button id="knowledgeBtn" class="secondary-btn" style="padding:7px 8px;margin-right:4px">Notes</button><button id="closeChat" class="close-btn">×</button></div><div class="chat-hint">Ask about DSA, CS subjects, resumes, interviews, or your placement plan.</div><div class="chat-messages" id="chatMessages"><div class="message bot">Hey! I’m your placement copilot. What are you working on today?</div></div><form id="chatForm" class="chat-form"><textarea id="chatInput" rows="1" placeholder="Ask your question…" required></textarea><button type="submit" aria-label="Send message">↑</button></form><div class="chat-foot">Answers use AI. Verify important details.</div></div>
-<script src="/static/app.js?v=3"></script>
+<script src="/static/app.js?v=4"></script>
 </body></html>

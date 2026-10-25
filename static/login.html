@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in — HireFlow AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#211f1c;--muted:#8e8982;--cream:#fff8eb;--side:#fbefdc;--yellow:#ffc94f;--gold:#edae10;--line:#eee8df;--green:#43ae75;--red:#bd4a35}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background:#f5f4f1;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px;display:grid;place-items:center;padding:20px}
+.auth-card{width:min(940px,100%);display:grid;grid-template-columns:1.05fr 1fr;background:#fffdfb;border-radius:26px;overflow:hidden;box-shadow:0 25px 90px #40311a1c;border:1px solid #f0e7d9}
+.auth-hero{position:relative;background:var(--yellow);padding:40px 38px;display:flex;flex-direction:column;justify-content:space-between;min-height:540px;overflow:hidden}
+.auth-hero:before{content:'';position:absolute;width:260px;height:260px;border-radius:50%;background:#fff9ee;border:1px solid #41372d;right:-70px;bottom:-60px}
+.auth-hero:after{content:'✦';position:absolute;right:56px;bottom:90px;font-size:26px;color:#a97711}
+.brand{display:flex;align-items:center;gap:10px;font:800 20px Manrope,sans-serif;position:relative;z-index:1}
+.brand-mark{display:grid;place-items:center;width:36px;height:36px;background:#26231f;color:var(--yellow);border-radius:12px;font-size:19px}
+.brand-ai{color:#7d5900}
+.hero-text{position:relative;z-index:1}
+.hero-text .kicker{font-size:10px;font-weight:800;letter-spacing:1.5px;color:#805d16}
+.hero-text h1{font:800 clamp(28px,3.4vw,38px)/1.1 Manrope,sans-serif;letter-spacing:-1.4px;margin:12px 0 12px}
+.hero-text p{font-size:13px;line-height:1.6;color:#6f571d;margin:0;max-width:300px}
+.perks{position:relative;z-index:1;display:grid;gap:9px;font-size:12px;color:#5d4813;margin:0;padding:0;list-style:none}
+.perks li:before{content:'✓';display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#26231f;color:var(--yellow);font-size:10px;font-weight:800;margin-right:9px}
+.auth-panel{padding:40px 38px;display:flex;flex-direction:column;justify-content:center}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#f6f1e8;border-radius:12px;padding:4px;margin-bottom:24px}
+.tab{border:0;background:transparent;border-radius:9px;padding:10px;font:700 12px 'DM Sans',sans-serif;color:#8a7d68;cursor:pointer}
+.tab.active{background:#fff;color:#26231f;box-shadow:0 3px 12px #78500c14}
+.auth-panel h2{font:800 24px Manrope,sans-serif;letter-spacing:-.7px;margin:0 0 6px}
+.sub{color:var(--muted);font-size:12px;margin:0 0 22px;line-height:1.5}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-size:11px;font-weight:700;color:#6b6256}
+.input-wrap{position:relative}
+.field input{width:100%;border:1px solid #e6dfd4;border-radius:11px;padding:12px 13px;background:#fff;font:13px 'DM Sans',sans-serif;color:#2e2923;outline:none}
+.field input:focus{border-color:#e9b834;box-shadow:0 0 0 3px #ffc94f25}
+.input-wrap input{padding-right:58px}
+.toggle-pw{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:#9a7214;font:700 11px 'DM Sans',sans-serif;cursor:pointer;padding:8px}
+.hint{font-size:10px;color:#9a9185}
+.submit{width:100%;border:0;border-radius:11px;background:#f1b51a;color:#2f260f;padding:13px;font:700 13px 'DM Sans',sans-serif;cursor:pointer;margin-top:4px;transition:background .15s}
+.submit:hover{background:#e6a90c}
+.submit:disabled{opacity:.6;cursor:wait}
+.error{display:none;background:#fff0ea;border:1px solid #f3cdbf;color:var(--red);border-radius:10px;padding:10px 12px;font-size:12px;margin-bottom:14px;line-height:1.5}
+.error.show{display:block}
+.switch{text-align:center;font-size:12px;color:var(--muted);margin-top:18px}
+.switch button{border:0;background:none;color:#9a7214;font:700 12px 'DM Sans',sans-serif;cursor:pointer;padding:0}
+.fine{text-align:center;font-size:10px;color:#aaa197;margin-top:16px}
+@media(max-width:760px){.auth-card{grid-template-columns:1fr}.auth-hero{min-height:0;padding:26px 24px;gap:20px}.auth-hero:before,.auth-hero:after{display:none}.perks{display:none}.hero-text p{max-width:none}.auth-panel{padding:28px 24px 30px}}
+</style>
+</head>
+<body>
+<main class="auth-card">
+  <section class="auth-hero">
+    <div class="brand"><span class="brand-mark">H</span><span>HireFlow<span class="brand-ai"> AI</span></span></div>
+    <div class="hero-text">
+      <span class="kicker">YOUR PLACEMENT JOURNEY</span>
+      <h1>Build skills.<br>Find your flow.</h1>
+      <p>Sign in to pick up your syllabus progress, daily tasks and AI study plan right where you left off.</p>
+    </div>
+    <ul class="perks">
+      <li>Your own private progress and tasks</li>
+      <li>AI planner, resume checker and chatbot</li>
+      <li>Works on any device you sign in from</li>
+    </ul>
+  </section>
+
+  <section class="auth-panel">
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tabLogin" role="tab" type="button">Sign in</button>
+      <button class="tab" id="tabRegister" role="tab" type="button">Create account</button>
+    </div>
+    <h2 id="formTitle">Welcome back</h2>
+    <p class="sub" id="formSub">Sign in with your email to continue your preparation.</p>
+    <div class="error" id="error" role="alert"></div>
+
+    <form id="authForm" novalidate autocomplete="off">
+      <div class="field" id="nameField" hidden>
+        <label for="name">Full name</label>
+        <input id="name" name="name" autocomplete="off" placeholder="e.g. Aarav Sharma" maxlength="60">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="hf_email" type="email" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="you@college.edu" required readonly>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <input id="password" name="hf_secret" type="password" autocomplete="new-password" placeholder="Your password" required readonly>
+          <button class="toggle-pw" id="togglePw" type="button" aria-label="Show password">Show</button>
+        </div>
+        <span class="hint" id="pwHint" hidden>Use at least 8 characters.</span>
+      </div>
+      <button class="submit" id="submitBtn" type="submit">Sign in</button>
+    </form>
+
+    <div class="switch"><span id="switchText">New here?</span> <button id="switchBtn" type="button">Create an account</button></div>
+    <div class="fine">Your progress is saved to your account, not shared with other students.</div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var TOKEN_KEY='hireflow_token';
+  var $=function(s){return document.querySelector(s)};
+  var mode='login';
+
+  function getToken(){try{return localStorage.getItem(TOKEN_KEY)}catch(e){return null}}
+  function setToken(t){try{localStorage.setItem(TOKEN_KEY,t)}catch(e){}}
+
+  // Already signed in? Verify the saved token, then go straight to the dashboard.
+  var existing=getToken();
+  if(existing){
+    fetch('/api/auth/me',{headers:{Authorization:'Bearer '+existing}}).then(function(r){
+      if(r.ok){location.replace('/')}
+      else{try{localStorage.removeItem(TOKEN_KEY)}catch(e){}}
+    }).catch(function(){});
+  }
+
+  function showError(msg){var el=$('#error');el.textContent=msg;el.classList.toggle('show',!!msg)}
+
+  function setMode(next){
+    mode=next;var reg=next==='register';
+    $('#tabLogin').classList.toggle('active',!reg);$('#tabRegister').classList.toggle('active',reg);
+    $('#nameField').hidden=!reg;$('#pwHint').hidden=!reg;
+    $('#formTitle').textContent=reg?'Create your account':'Welcome back';
+    $('#formSub').textContent=reg?'It takes a minute. Your progress and plans stay private to you.':'Sign in with your email to continue your preparation.';
+    $('#submitBtn').textContent=reg?'Create account':'Sign in';
+    $('#switchText').textContent=reg?'Already have an account?':'New here?';
+    $('#switchBtn').textContent=reg?'Sign in':'Create an account';
+    $('#password').placeholder=reg?'At least 8 characters':'Your password';
+    showError('');
+  }
+
+  // Block browser autofill: fields stay read-only until the user clicks into them.
+  ['#email','#password'].forEach(function(sel){var el=$(sel);
+    var unlock=function(){el.removeAttribute('readonly')};
+    el.addEventListener('focus',unlock);el.addEventListener('pointerdown',unlock);
+  });
+
+  $('#tabLogin').onclick=function(){setMode('login')};
+  $('#tabRegister').onclick=function(){setMode('register')};
+  $('#switchBtn').onclick=function(){setMode(mode==='login'?'register':'login')};
+  $('#togglePw').onclick=function(){
+    var pw=$('#password'),show=pw.type==='password';
+    pw.type=show?'text':'password';this.textContent=show?'Hide':'Show';
+    this.setAttribute('aria-label',show?'Hide password':'Show password');
+  };
+
+  $('#authForm').onsubmit=async function(e){
+    e.preventDefault();showError('');
+    var email=$('#email').value.trim(),password=$('#password').value,name=$('#name').value.trim();
+    if(mode==='register'&&name.length<2){showError('Please enter your name.');return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){showError('Enter a valid email address.');return}
+    if(!password){showError('Enter your password.');return}
+    if(mode==='register'&&password.length<8){showError('Use a password with at least 8 characters.');return}
+    var btn=$('#submitBtn'),label=btn.textContent;
+    btn.disabled=true;btn.textContent=mode==='register'?'Creating account…':'Signing in…';
+    try{
+      var res=await fetch(mode==='register'?'/api/auth/register':'/api/auth/login',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(mode==='register'?{name:name,email:email,password:password}:{email:email,password:password})
+      });
+      var data={};try{data=await res.json()}catch(_){}
+      if(!res.ok)throw new Error(data.detail||'Something went wrong. Please try again.');
+      setToken(data.token);
+      location.replace('/');
+    }catch(err){
+      showError(err.message==='Failed to fetch'?'Cannot reach the server. Is it running?':err.message);
+      btn.disabled=false;btn.textContent=label;
+    }
+  };
+})();
+</script>
+</body>
+</html>
